@@ -1,7 +1,9 @@
 Decentralized Multi-Agent Swarm Chat System (DELVING AI) 🚀
-A decentralized chat system powered by specialized AI agents collaborating through swarm intelligence.
+
+A decentralized chat system powered by specialized AI agents collaborating through swarm intelligence!Explore the collaboration of Assistant, Researcher, and Planner agents in this innovative project.
 
 Table of Contents 📋
+
 
 Abstract ✨
 Motivation 💡
@@ -40,12 +42,15 @@ Running the Application
 
 Conclusion 🎯
 Visuals 📸
+Troubleshooting Image Display Issue ⚠️
 
 
 Abstract ✨
+
 This project implements a sophisticated chat system powered by a decentralized Multi-Agent System (MAS). Inspired by swarm intelligence principles, it features multiple specialized AI agents (Assistant, Researcher, Planner) that collaborate dynamically to handle user queries. The system incorporates a belief mechanism, allowing agents to assess each other's reliability over time, influencing communication success and task delegation. Users interact via a Streamlit web interface, which communicates with a FastAPI backend. The system supports tool usage (Calculator, Web Search, ArXiv Search) and allows users to upload PDF documents for context-aware interactions. This architecture enables complex task decomposition, specialized expertise, and potential resilience beyond monolithic chatbot models.
 
 Motivation 💡
+
 Traditional chatbots often employ a single, large language model (LLM) to handle all types of user queries. While powerful, this monolithic approach can struggle with:
 
 Specialized Tasks: A generalist model might lack the depth or specific tools needed for tasks like complex calculations, academic research, or structured planning.
@@ -56,6 +61,7 @@ Context Management: Effectively utilizing vast amounts of context (like large do
 This project explores a Multi-Agent System approach to overcome these limitations. By creating specialized agents with distinct capabilities and tools, and enabling them to collaborate dynamically using swarm intelligence principles, we aim to build a more robust, adaptable, and capable conversational AI system. The belief mechanism adds a layer of dynamic adaptation based on observed agent performance.
 
 System Architecture 🏗️
+
 The system comprises several key components interacting asynchronously:
 
 Streamlit Frontend (app.py): User interface for registration, login, chat interaction, and PDF file upload.
@@ -89,6 +95,7 @@ Streamlit Frontend displays response to User
 
 
 Core Components Deep Dive 🔍
+
 FastAPI Backend (main.py)
 Role: Serves as the main API gateway.
 Functionality:
@@ -231,6 +238,7 @@ Defines settings like API keys, model IDs, database URL, swarm parameters (DEFAU
 
 
 Swarm Intelligence Implementation 🐝
+
 Concept Overview
 This project leverages concepts from Swarm Intelligence (SI) to enable collaboration between specialized agents. SI studies the collective behavior of decentralized, self-organized systems, often inspired by natural systems like ant colonies or bird flocks. Key principles applied here are:
 
@@ -286,6 +294,7 @@ Avoid immediate loopback (delegating back to the agent that just sent the task).
 This LLM-driven analysis, informed by the dynamic belief system, allows for more intelligent and context-aware task routing than simple hardcoded rules.
 
 Agent Workflow Example 🛠️
+
 Let’s trace a query like: "Summarize the key findings about reinforcement learning in the uploaded paper and then search for recent news about AlphaFold."
 
 User Input: User uploads rl_paper.pdf and enters the query in the Streamlit app.
@@ -349,6 +358,7 @@ Frontend (app.py): Displays the final answer to the user.
 Illustration of the agent interaction and task delegation process.
 
 File Handling Feature 📂
+
 A key enhancement is the ability to incorporate user-uploaded PDF documents into the conversation:
 
 Upload (Frontend): app.py uses st.file_uploader to accept a PDF.
@@ -367,6 +377,7 @@ Synthesis prompts (_synthesize_delegation_results) also include a summary of the
 This allows users to ask specific questions about documents, request summaries, or use the document content as context for more complex queries involving other tools.
 
 Advantages Over Standard Chatbots ✅
+
 This Multi-Agent Swarm approach offers several advantages compared to traditional monolithic chatbots:
 
 Specialization & Expertise: Agents are designed for specific capabilities (planning, research, assistance) and equipped with relevant tools. A researcher using arxiv_search will likely outperform a generalist LLM for finding specific scientific papers.
@@ -378,6 +389,7 @@ Focused Context: While the entire system handles diverse information (chat histo
 
 
 Running the Project 🏃‍♂️
+
 Prerequisites
 
 Python 3.9+
@@ -424,11 +436,31 @@ streamlit run app.py
 
 
 Conclusion 🎯
+
 This Decentralized Multi-Agent Swarm Chat System demonstrates a powerful alternative to traditional chatbots. By leveraging agent specialization, dynamic task delegation, and a trust-based belief system, it can handle complex, multi-faceted queries involving specialized tools and user-provided documents. While more complex than a monolithic approach, the modularity, adaptability, and potential for specialized expertise offered by this swarm intelligence architecture provide a promising direction for building more capable and robust conversational AI systems.
 
 Visuals 📸
+
 Agent Workflow Diagram
 Illustration of the agent interaction and task delegation process.
-![Agent Workflow Diagram](images\agent_workflow.png)
 Streamlit Frontend (Placeholder)
 Screenshot of the Streamlit interface (to be updated with actual image).
+
+Troubleshooting Image Display Issue ⚠️
+
+ERROR NOTICE: The image isn’t displaying because the original path (C:\Users\adith\Documents\Agent_101\images\agent_workflow.png) is a local file path, which GitHub cannot access. Follow these steps to fix it:
+
+Update Path in README.md: Replace the local path with a relative path:  
+![Agent Workflow Diagram](images/agent_workflow.png)
+
+Ensure images/agent_workflow.png is in your project root’s images folder.
+
+
+
+Verify Upload: Check your GitHub repository to confirm the images folder and agent_workflow.png are uploaded.
+
+
+
+💡 After these steps, the image should display correctly on GitHub!
+
+Built with ❤️ for innovative AI solutions.
