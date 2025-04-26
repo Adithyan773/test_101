@@ -9,10 +9,10 @@
 ## **Table of Contents** 📋  
 ---
 
-- [Abstract](#abstract) ✨
-- [Motivation](#motivation) 💡
-- [System Architecture](#system-architecture) 🏗️
-- [Core Components Deep Dive](#core-components-deep-dive) 🔍
+- [Abstract](#abstract) 
+- [Motivation](#motivation) 
+- [System Architecture](#system-architecture) 
+- [Core Components Deep Dive](#core-components-deep-dive) 
   - [FastAPI Backend (main.py)](#fastapi-backend-mainpy)
   - [Streamlit Frontend (app.py)](#streamlit-frontend-apppy)
   - [Multi-Agent System (swarm_system.py)](#multi-agent-system-swarm_systempy)
@@ -21,7 +21,7 @@
   - [Tools (tools.py)](#tools-toolspy)
   - [Database (database.py) & Auth (auth.py)](#database-databasepy--auth-authpy)
   - [Configuration (config.py)](#configuration-configpy)
-- [Swarm Intelligence Implementation](#swarm-intelligence-implementation) 🐝
+- [Swarm Intelligence Implementation](#swarm-intelligence-implementation) 
   - [Concept Overview](#concept-overview)
   - [The Belief System: Modeling Trust and Reliability](#the-belief-system-modeling-trust-and-reliability)
     - [Parameters](#parameters)
@@ -29,16 +29,16 @@
     - [Belief Updates (Success/Failure)](#belief-updates-successfailure)
   - [Probabilistic Communication](#probabilistic-communication)
   - [Intelligent Task Delegation](#intelligent-task-delegation)
-- [Agent Workflow Example](#agent-workflow-example) 🛠️
-- [File Handling Feature](#file-handling-feature) 📂
-- [Advantages Over Standard Chatbots](#advantages-over-standard-chatbots) ✅
-- [Running the Project](#running-the-project) 🏃‍♂️
+- [Agent Workflow Example](#agent-workflow-example) 
+- [File Handling Feature](#file-handling-feature) 
+- [Advantages Over Standard Chatbots](#advantages-over-standard-chatbots) 
+- [Running the Project](#running-the-project) 
   - [Prerequisites](#prerequisites)
   - [Environment Variables](#environment-variables)
   - [Running the Application](#running-the-application)
-- [Conclusion](#conclusion) 🎯
-- [Visuals](#visuals) 📸
-- [Troubleshooting Image Display Issue](#troubleshooting-image-display-issue) ⚠️
+- [Future Work](#future-work) 
+- [Conclusion](#conclusion) 
+
 
 ---
 
@@ -78,7 +78,12 @@ The system comprises several key components interacting asynchronously:
 - **Authentication (auth.py):** Provides password hashing and verification utilities.
 - **Configuration (config.py):** Manages settings using Pydantic, loading from environment variables or a .env file.
 
-Below is a textual representation of the system architecture (originally a Mermaid diagram):
+Below is a visual and textual representation of the system architecture (originally a Mermaid diagram and its image ):
+
+### **Agent Workflow Diagram**  
+![Agent Workflow Diagram](images/swarm_system.png)
+  
+*Illustration of the swarm agent system and process.*
 
 ```
 User interacts/uploads to Streamlit Frontend
@@ -451,51 +456,20 @@ streamlit run app.py
 ```
 
 ---
+## **Future Work**
+---
+- **More Sophisticated Belief Models:** Implement Bayesian belief updates or models considering task success/failure quality, not just communication success.
+- **Dynamic Agent Creation/Scaling:** Allow the system to spin up new agent instances based on load or task type.
+- **Advanced Tooling:** Integrate more complex tools (code execution, database querying, more APIs). Implement more robust tool selection logic, potentially using an LLM call specifically for tool choice.
+- **Parallel Delegation:** Allow the planner agent to delegate multiple sub-tasks concurrently.
+- **Improved Error Handling & Fallbacks:** More graceful handling of LLM errors, tool failures, and agent timeouts.
+- **User Feedback Loop:** Allow users to rate responses, potentially feeding back into the belief system.
+- **Enhanced UI:** Improve the Streamlit UI with features like displaying agent activity/delegation paths, managing multiple files, etc.
 
+---
 ## **Conclusion** 🎯  
 ---
 
 This **Decentralized Multi-Agent Swarm Chat System** demonstrates a powerful alternative to traditional chatbots. By leveraging agent specialization, dynamic task delegation, and a trust-based belief system, it can handle complex, multi-faceted queries involving specialized tools and user-provided documents. While more complex than a monolithic approach, the modularity, adaptability, and potential for specialized expertise offered by this swarm intelligence architecture provide a promising direction for building more capable and robust conversational AI systems.
 
 ---
-
-## **Visuals** 📸  
----
-
-### **Agent Workflow Diagram**  
-![Agent Workflow Diagram](images/agent_workflow.png)  
-*Illustration of the agent interaction and task delegation process.*
-
-### **Streamlit Frontend (Placeholder)**  
-![Streamlit Frontend](attachment://streamlit_frontend.png)  
-*Screenshot of the Streamlit interface (to be updated with actual image).*
-
----
-
-## **Troubleshooting Image Display Issue** ⚠️  
----
-
-**ERROR NOTICE:** The image isn’t displaying because the original path (`C:\Users\adith\Documents\Agent_101\images\agent_workflow.png`) is a local file path, which GitHub cannot access. Follow these steps to fix it:
-
-1. **Update Path in README.md:** Replace the local path with a relative path:  
-   ```markdown
-   ![Agent Workflow Diagram](images/agent_workflow.png)
-   ```
-   Ensure `images/agent_workflow.png` is in your project root’s `images` folder.
-
-2. **Push to GitHub:**  
-   ```bash
-   git add .
-   git commit -m "Update README with correct image path"
-   git push origin main  # Replace 'main' with your branch name if different
-   ```
-
-3. **Verify Upload:** Check your GitHub repository to confirm the `images` folder and `agent_workflow.png` are uploaded.
-
-4. **Optional Raw URL:** After pushing, use the raw URL (e.g., `https://raw.githubusercontent.com/Adithyan773/test_101/main/images/agent_workflow.png`) if needed.
-
-💡 *After these steps, the image should display correctly on GitHub!*
-
----
-
-*Built with ❤️ for innovative AI solutions.*
