@@ -6,7 +6,7 @@
 
 ---
 
-## **Table of Contents** 📋  
+## **Table of Contents** 
 ---
 
 - [Abstract](#abstract) 
@@ -42,14 +42,14 @@
 
 ---
 
-## **Abstract** ✨  
+## **Abstract**  
 ---
 
 This project implements a sophisticated chat system powered by a **decentralized Multi-Agent System (MAS)**. Inspired by swarm intelligence principles, it features multiple specialized AI agents (**Assistant**, **Researcher**, **Planner**) that collaborate dynamically to handle user queries. The system incorporates a belief mechanism, allowing agents to assess each other's reliability over time, influencing communication success and task delegation. Users interact via a **Streamlit web interface**, which communicates with a **FastAPI backend**. The system supports tool usage (**Calculator**, **Web Search**, **ArXiv Search**) and allows users to upload PDF documents for context-aware interactions. This architecture enables complex task decomposition, specialized expertise, and potential resilience beyond monolithic chatbot models.
 
 ---
 
-## **Motivation** 💡  
+## **Motivation**   
 ---
 
 Traditional chatbots often employ a single, large language model (LLM) to handle all types of user queries. While powerful, this monolithic approach can struggle with:
@@ -63,7 +63,7 @@ This project explores a Multi-Agent System approach to overcome these limitation
 
 ---
 
-## **System Architecture** 🏗️  
+## **System Architecture** 
 ---
 
 The system comprises several key components interacting asynchronously:
@@ -107,7 +107,7 @@ Streamlit Frontend displays response to User
 
 ---
 
-## **Core Components Deep Dive** 🔍  
+## **Core Components Deep Dive**  
 ---
 
 ### **FastAPI Backend (main.py)**  
@@ -238,7 +238,7 @@ Streamlit Frontend displays response to User
 
 ---
 
-## **Swarm Intelligence Implementation** 🐝  
+## **Swarm Intelligence Implementation**  
 ---
 
 ### **Concept Overview**  
@@ -305,7 +305,7 @@ This LLM-driven analysis, informed by the dynamic belief system, allows for more
 
 ---
 
-## **Agent Workflow Example** 🛠️  
+## **Agent Workflow Example**   
 ---
 
 Let’s trace a query like: **"Summarize the key findings about reinforcement learning in the uploaded paper and then search for recent news about AlphaFold."**
@@ -353,14 +353,21 @@ Let’s trace a query like: **"Summarize the key findings about reinforcement le
 27. **Backend (main.py):** Gets the final answer, stores it in the database, and sends it back to the frontend.
 28. **Frontend (app.py):** Displays the final answer to the user.
 
-> *(Note: This is a simplified flow. Belief updates and potential communication failures/timeouts would add complexity.)*
+>## **Project Frontend demo** 
+![Agent Workflow Diagram](images/demo1.png) 
+*Illustration of the frontend interaction .*
 
+## **Project Backend demo** 
+![Agent Workflow Diagram](images/demo2.png) 
+*Illustration of the backend interaction and task delegation process.*
+
+## **Agent Workflow Example** 
 ![Agent Workflow Diagram](images/agent_workflow.png)  
 *Illustration of the agent interaction and task delegation process.*
 
 ---
 
-## **File Handling Feature** 📂  
+## **File Handling Feature** 
 ---
 
 A key enhancement is the ability to incorporate user-uploaded PDF documents into the conversation:
@@ -380,7 +387,7 @@ This allows users to ask specific questions about documents, request summaries, 
 
 ---
 
-## **Advantages Over Standard Chatbots** ✅  
+## **Advantages Over Standard Chatbots**  
 ---
 
 This Multi-Agent Swarm approach offers several advantages compared to traditional monolithic chatbots:
@@ -394,7 +401,7 @@ This Multi-Agent Swarm approach offers several advantages compared to traditiona
 
 ---
 
-## **Running the Project** 🏃‍♂️  
+## **Running the Project**   
 ---
 
 ### **Prerequisites**  
@@ -467,7 +474,7 @@ streamlit run app.py
 - **Enhanced UI:** Improve the Streamlit UI with features like displaying agent activity/delegation paths, managing multiple files, etc.
 
 ---
-## **Conclusion** 🎯  
+## **Conclusion**  
 ---
 
 This **Decentralized Multi-Agent Swarm Chat System** demonstrates a powerful alternative to traditional chatbots. By leveraging agent specialization, dynamic task delegation, and a trust-based belief system, it can handle complex, multi-faceted queries involving specialized tools and user-provided documents. While more complex than a monolithic approach, the modularity, adaptability, and potential for specialized expertise offered by this swarm intelligence architecture provide a promising direction for building more capable and robust conversational AI systems.
